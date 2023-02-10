@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+    <div class="container">
+        This is about Loops
+    </div>
+    <script>
+    //    let friends=["lingaraj","chandan","swamy","deepak"] ;
+    //    for (let index = 0; index < friends.length; index++) {
+    //     console.log("Hello my friend "+friends[index]);
+        let Employee={
+            name:"Raj",
+            salary:20,
+            channel:"CWH"
+        }
+       for(key in Employee){
+        console.log(`The ${key} of employee is${Employee[key]}`);
+
+       }
+       //while loop in JS
+       let i=0;
+       while(i<4){
+        console.log(`${i} is less than 4`);
+        i++;
+        }
+        //do while loop in JS
+        let j=34;
+        do{
+            console.log(`${j} is less than 4 but we are in do while loop`);
+            i++}while(j<4)
+    </script>
+</body>
+</html>

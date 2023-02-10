@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+
+        }
+        body{
+            background-color:cyan;
+        }
+        .container{
+            background-color: rgb(114, 172, 218);
+            border: 3px solid rgb(12, 12, 25);
+            /* we can write margin/padding like this 
+            padding-top: 79px;
+            padding-bottom: 79px;
+            padding-left: 34px;*/ 
+            /* padding: 23px 56px 6px 78px; */
+            padding: 34px 19px;   
+             /* y(top/bottom) x(left/right) */ 
+            
+            margin: 34px 19px;
+            border-radius: 23px;
+            width: 533px;
+            box-sizing: 35px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <h3>This is heading</h3>
+    <p id="first">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, consequuntur tenetur debitis
+        a ad delectus inventore perspiciatis magni odio, deleniti quae consectetur exercitationem?</p>
+    </div>
+        <div class="container">
+    <h3>This is heading</h3>
+    <p id="second">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, consequuntur tenetur debitis
+        a ad delectus inventore perspiciatis magni odio, deleniti quae consectetur exercitationem?</p>
+    </div>
+        <div class="container">
+    <h3>This is heading</h3>
+    <p id="third">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, consequuntur tenetur debitis
+        a ad delectus inventore perspiciatis magni odio, deleniti quae consectetur exercitationem?</p>
+    </div>
+</body>
+
+</html>
