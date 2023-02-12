@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking app</title>
+</head>
+<body>
+    <form id="addForm" onsubmit="saveToLocalStorage(event)">
+        <label>Name</label>
+        <input type="text" name="username" required>
+        <label>EmailId</label>
+        <input type="email" name="emailid" required>
+        <label for="">Phone Number</label>
+        <input type="tel" name="phonenumber">
+        <button>submit</button>
+</form>
+<ul class="listofgropitem" id="listofitems">
+
+</ul>
+<script src="task12.js"></script>
+</body>
+</html>
