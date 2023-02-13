@@ -6,7 +6,7 @@
 //     var li=document.createElement('li');
 //     li.className="listofgropitem";
 //     li.appendChild(document.createTextNode(newitem));
-
+//}
 
     //saveToLocalStorage function
     function saveToLocalStorage(event) {
@@ -22,6 +22,7 @@
         };
         localStorage.setItem(obj.email,JSON.stringify(obj));
         showUserOnscreen(obj);
+    }
 
         function showUserOnscreen(obj){
             const parentEle=document.getElementById('listofitems');
@@ -34,12 +35,27 @@
             const deletebutton = document.createElement('input');
             deletebutton.type = 'button';
             deletebutton.value = 'Delete';
+
             deletebutton.onclick = () =>{
                 localStorage.removeItem(obj.email);
                 parentEle.removeChild(childEle);
 
             }
+
+            const editbutton = document.createElement('input');
+            editbutton.type = 'button';
+            editbutton.value = 'Edit';
+
+            editbutton.onclick=() =>{
+                localStorage.removeItem(obj.email);
+                parentEle.removeChild(childEle);
+                document.getElementById('usernameInputTag').value = obj.name;
+                document.getElementById('emailInputTag').value = obj.email;
+                document.getElementById('phonenumberInputTag').value = obj.phonenumber;
+                
+            }
             childEle.appendChild(deletebutton);
+            childEle.appendChild(editbutton);
             parentEle.appendChild(childEle);
         } 
-    }
+    
