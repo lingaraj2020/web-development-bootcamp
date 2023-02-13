@@ -29,8 +29,17 @@
             childEle.textContent = obj.name + ' - '+ obj.email + ' - '+ obj.phonenumber;
             parentEle.appendChild(childEle);
             //parentEle.innerHTML=parentEle.innerHTML+ `<li>${obj.name} - ${obj.email} - ${obj.phonenumber}</li>`
-               
-        }
-    }
 
-      
+
+            const deletebutton = document.createElement('input');
+            deletebutton.type = 'button';
+            deletebutton.value = 'Delete';
+            deletebutton.onclick = () =>{
+                localStorage.removeItem(obj.email);
+                parentEle.removeChild(childEle);
+
+            }
+            childEle.appendChild(deletebutton);
+            parentEle.appendChild(childEle);
+        } 
+    }
