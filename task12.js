@@ -59,3 +59,31 @@
             parentEle.appendChild(childEle);
         } 
     
+    // function greeting(name) {
+    //     alert(`Hello, ${name}`);
+    //   }
+      
+    //   function processUserInput(callback) {
+    //     const name = prompt("Please enter your name.");
+    //     callback(name);
+    //   }
+      
+    //   processUserInput(greeting);
+    // create2ndpost().then(()=>{
+    //     deletepost().then((popedele)=>{
+    //         console.log(popedele.title);
+    //         create3rdpost().then(()=>{
+    //             deletepost().then((popedele)=>{
+    //                 console.log(popedele.title);
+    //                 deletepost().then(()=>{})
+    //                 .catch((err)=>{
+    //                     console.log(err);
+    //                 })
+    //                 .catch((err)=>{})
+    //             })
+    //             .catch((err)=>{})
+    //         })
+    //         .catch((err)=>{})
+    //     })
+    //     .catch((err)=>{}})
+    // })
