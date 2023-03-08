@@ -21,7 +21,7 @@
 
         };
 
-        axios.get("https://crudcrud.com/api/8aeb2fa13f8e479482a27a435e5d2260/bookingData",obj)
+        axios.post("https://crudcrud.com/api/6efd12580e3641e8b2baa99dd5e69073/bookingData",obj)
         .then((res) =>{
             showUserOnscreen(res.data)
             //console.log(res);
@@ -33,6 +33,31 @@
         //localStorage.setItem(obj.email,JSON.stringify(obj));
         //showUserOnscreen(obj);
     }
+        window.addEventListener("DOMContentLoaded",()=>{
+            const data = axios.get("https://crudcrud.com/api/6efd12580e3641e8b2baa99dd5e69073/bookingData")
+            .then((res) =>{
+                //console.log(res)
+
+                for(var i=0;i<res.data.length;i++){
+                    showUserOnscreen(res.data[i])
+                }
+            })
+            .catch((err) =>{
+                console.log(err)
+            })
+            // const localStorageObj = localStorage;
+            // const localstoragekeys = Object.keys(localStorageObj)
+
+            // for(var i=0;i< localstoragekeys.length;i++){
+            //     const key = localstoragekeys[i]
+            //     const userDetailsString = localStorageObj[key]
+            //     const userDetailsObj = JSON.parse(userDetailsString)
+            //     showUserOnscreen(userDetailsObj)
+            // }
+            console.log(data)
+
+        })
+
 
         function showUserOnscreen(obj){
             const parentEle=document.getElementById('listofitems');
