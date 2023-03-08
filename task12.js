@@ -90,7 +90,14 @@
             editbutton.value = 'Edit';
 
             editbutton.onclick=(userid) =>{
-                localStorage.removeItem(obj.email);
+                axios.put(`https://crudcrud.com/api/6efd12580e3641e8b2baa99dd5e69073/bookingData${userid}`)
+                .then((res)=>{
+                    showUserOnscreen(res.userid)
+                })
+                .catch((err)=>{
+                    console.log(err)
+                })
+                localStorage.removeItem(obj._id);
                 parentEle.removeChild(childEle);
                 document.getElementById('usernameInputTag').value = obj.name;
                 document.getElementById('emailInputTag').value = obj.email;
