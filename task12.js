@@ -20,8 +20,18 @@
             phonenumber
 
         };
-        localStorage.setItem(obj.email,JSON.stringify(obj));
-        showUserOnscreen(obj);
+
+        axios.get("https://crudcrud.com/api/8aeb2fa13f8e479482a27a435e5d2260/bookingData",obj)
+        .then((res) =>{
+            showUserOnscreen(res.data)
+            //console.log(res);
+        })
+        .catch((err)=>{
+            document.body.innerHTML = document.body.innerHTML + "<h4>something went wrong</h4>"
+            console.log(err);
+        })
+        //localStorage.setItem(obj.email,JSON.stringify(obj));
+        //showUserOnscreen(obj);
     }
 
         function showUserOnscreen(obj){
