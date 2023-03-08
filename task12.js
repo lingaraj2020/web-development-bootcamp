@@ -34,9 +34,9 @@
         //showUserOnscreen(obj);
     }
         window.addEventListener("DOMContentLoaded",()=>{
-            const data = axios.get("https://crudcrud.com/api/6efd12580e3641e8b2baa99dd5e69073/bookingData")
+            axios.get("https://crudcrud.com/api/6efd12580e3641e8b2baa99dd5e69073/bookingData")
             .then((res) =>{
-                //console.log(res)
+                console.log(res)
 
                 for(var i=0;i<res.data.length;i++){
                     showUserOnscreen(res.data[i])
@@ -54,7 +54,7 @@
             //     const userDetailsObj = JSON.parse(userDetailsString)
             //     showUserOnscreen(userDetailsObj)
             // }
-            console.log(data)
+            //console.log(data)
 
         })
 
@@ -62,7 +62,7 @@
         function showUserOnscreen(obj){
             const parentEle=document.getElementById('listofitems');
             const childEle=document.createElement('li');
-            childEle.textContent = obj.name + ' - '+ obj.email + ' - '+ obj.phonenumber;
+            childEle.textContent = obj._id + ' - '+ obj.name+' - '+ obj.email + ' - '+ obj.phonenumber;
             parentEle.appendChild(childEle);
             //parentEle.innerHTML=parentEle.innerHTML+ `<li>${obj.name} - ${obj.email} - ${obj.phonenumber}</li>`
 
@@ -71,9 +71,17 @@
             deletebutton.type = 'button';
             deletebutton.value = 'Delete';
 
-            deletebutton.onclick = () =>{
-                localStorage.removeItem(obj.email);
-                parentEle.removeChild(childEle);
+            deletebutton.onclick = (userid) =>{
+                axios.delete(`https://crudcrud.com/api/6efd12580e3641e8b2baa99dd5e69073/bookingData${userid}`)
+                .then((res)=>{
+                    showUserOnscreen(res._id)
+
+                })
+                .catch((err)=>{
+                    console.log(err)
+                })
+                localStorage.removeItem(obj._id);
+                //parentEle.removeChild(childEle);
 
             }
 
@@ -81,7 +89,7 @@
             editbutton.type = 'button';
             editbutton.value = 'Edit';
 
-            editbutton.onclick=() =>{
+            editbutton.onclick=(userid) =>{
                 localStorage.removeItem(obj.email);
                 parentEle.removeChild(childEle);
                 document.getElementById('usernameInputTag').value = obj.name;
