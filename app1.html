@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Admin</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="d-flex flex-column">
+      <div
+        class="box text-center p-2"
+        style="text-align: center;"
+      >
+        <h1>Stock Administrator</h1>
+      </div>
+      <div class="p-2">
+        <form onsubmit="addProduct(event)">
+          <label>Selling Price :</label>
+          <input id="price" type="number" />
+          <label>Product Name :</label>
+          <input id="name" type="text" />
+          <input type="submit" value="Add Product" class="btn btn-outline-success" />
+        </form>
+      </div>
+
+      
+        <div class="p-2">
+          <h1>Products :-</h1>
+        </div>
+        <div class="card p-2">
+          <ul class="list-group " id="items"></ul>
+        </div>
+        <div class="p-2">
+          <h2 id="sum"></h2>
+        </div>
+      
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="app1.js"></script>
+  </body>
+</html>
