@@ -1,27 +1,14 @@
-import logo from './logo.svg';
+import ExpensItem from './components/ExpenseItem';
 import './App.css';
 
 function App() {
   return (
-     <h2>lets strated</h2>
-  )
-  //   <div className="App">
-  //     <header className="App-header">
-  //       <img src={logo} className="App-logo" alt="logo" />
-  //       <p>
-  //         Edit <code>src/App.js</code> and save to reload.
-  //       </p>
-  //       <a
-  //         className="App-link"
-  //         href="https://reactjs.org"
-  //         target="_blank"
-  //         rel="noopener noreferrer"
-  //       >
-  //         Learn React
-  //       </a>
-  //     </header>
-  //   </div>
-  // );
+    <div>
+      <h2>lets strated</h2>
+     <ExpensItem></ExpensItem>
+    </div>
+  );
 }
+     
 
 export default App;
